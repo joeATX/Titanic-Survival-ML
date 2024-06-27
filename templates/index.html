@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Home page</title>
+  </head>
+  <body>
+    <h1>Titanic survival prediction</h1>
+    <style>
+        body {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          margin: 0;
+          font-family: Arial, sans-serif;
+        }
+        .form-container {
+          text-align: center;
+          border: 1px solid #ccc;
+          padding: 20px;
+          border-radius: 10px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-container input[type="text"] {
+          margin-bottom: 10px;
+          padding: 5px;
+          width: 80%;
+        }
+        .form-container input[type="submit"] {
+          padding: 10px 20px;
+          background-color: #007bff;
+          color: white;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+        }
+        .form-container input[type="submit"]:hover {
+          background-color: #0056b3;
+        }
+      </style>
+    <form action="{% url 'result' %}">
+      {% csrf_token %}
+      
+      <p>Passenger Class:</p>
+      <input type="text" name="pclass">
+      <br>
+
+      <p>Sex:</p>
+      <input type="text" name="sex">
+      <br>
+
+      <p>Age:</p>
+      <input type="text" name="age">
+      <br>
+
+      <p>Sibsp:</p>
+      <input type="text" name="sibsp">
+      <br>
+
+      <p>Parch:</p>
+      <input type="text" name="parch">
+      <br>
+
+      <p>Fare:</p>
+      <input type="text" name="fare">
+      <br>
+
+      <p>Embark Category C:</p>
+      <input type="text" name="embC">
+      <br>
+
+      <p>Embark Category Q:</p>
+      <input type="text" name="embQ">
+      <br>
+      
+      <p>Embark Category S:</p>
+      <input type="text" name="embS">
+      <br>
+
+      <input type="submit" value='Get Predictions'>
+    </form>
+  </body>
+</html>
